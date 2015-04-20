@@ -12,7 +12,12 @@ class IterativeLinkedListTest < MiniTest::Test
     assert @list
   end
 
-  def test_it_starts_with_a_head
-    assert @list.head
+  def test_it_starts_with_a_head_that_is_nil
+    assert_equal nil, @list.head
+  end
+
+  def test_it_can_change_its_head
+    @list.head = Node.new("new")
+    assert_equal "new", @list.head
   end
 end
